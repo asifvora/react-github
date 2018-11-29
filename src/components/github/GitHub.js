@@ -15,7 +15,7 @@ import { Profile } from '../profile';
 import { Repositories, RepositoryFilter } from '../repositories';
 import { Stars } from '../stars';
 import { Followers } from '../followers';
-import { Followings } from '../Followings';
+import { Followings } from '../followings';
 
 class GitHub extends Component {
 
