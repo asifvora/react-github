@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
-import { NotFound } from "./components/notFound";
+import { NotFound } from "./components/not-found";
 import { createBrowserHistory } from 'history';
 export const history = createBrowserHistory();
 
