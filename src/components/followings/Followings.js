@@ -11,8 +11,8 @@ class Followings extends Component {
         super(props);
     }
 
-    renderFollowing(following) {
-        return following
+    renderFollowing(followings) {
+        return followings
             .map(followingUser => <FollowingItem key={followingUser.id} following={followingUser} />);
     }
 
@@ -22,7 +22,7 @@ class Followings extends Component {
         return (
             <ul className="list-unstyled">
                 {isLoading && spinnerLoader()}
-                {isSuccess && followings.length > 0 ? this.renderFollowing(following) : !isLoading && noRecordFound()}
+                {isSuccess && followings.length > 0 ? this.renderFollowing(followings) : !isLoading && noRecordFound()}
             </ul>
         );
     }
