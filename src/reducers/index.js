@@ -1,8 +1,8 @@
 'use strict';
 
 import { combineReducers } from "redux";
-import gitHub from './GitHub';
+import userProfile from './UserProfile';
 
-const reducer = combineReducers({ gitHub });
+const reducer = combineReducers({ userProfile });
 
 export default reducer;

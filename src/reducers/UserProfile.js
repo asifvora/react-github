@@ -3,24 +3,24 @@
 import * as type from "../constants";
 
 const initialState = {
-    success: false,
+    isSuccess: false,
     isLoading: true,
-    userDetails: {},
+    user: {},
 };
 
-const GitHub = (state = initialState, action) => {
+const UserProfile = (state = initialState, action) => {
     switch (action.type) {
         case type.GET_USER_DETAILS_SUCCESS:
             return {
                 ...state,
-                success: action.state.success,
+                isSuccess: action.state.isSuccess,
                 isLoading: action.state.isLoading,
-                userDetails: action.state.userDetails,
+                user: action.state.user,
             };
         case type.GET_USER_DETAILS__FAILURE:
             return {
                 ...state,
-                success: action.state.success,
+                isSuccess: action.state.isSuccess,
                 isLoading: action.state.isLoading,
                 error: action.state.error,
             };
@@ -28,4 +28,4 @@ const GitHub = (state = initialState, action) => {
             return state;
     }
 };
-export default GitHub;
+export default UserProfile;

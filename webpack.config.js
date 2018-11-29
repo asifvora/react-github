@@ -10,7 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({ favicon: 'public/favicon.ico', templa
 const cssPlugin = new MiniCssExtractPlugin({ filename: '[name].css' });
 const cleanPlugin = new CleanWebpackPlugin(['dist']);
 const generateSWPlugin = new WorkboxPlugin.GenerateSW({ clientsClaim: true, skipWaiting: true });
-const uglifyPlugin = new UglifyJsPlugin({ cache: true, parallel: true, sourceMap: true });
+const uglifyPlugin = new UglifyJsPlugin({ cache: false, parallel: true, sourceMap: true });
 
 module.exports = {
     entry: './src/index.js',

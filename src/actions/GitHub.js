@@ -10,11 +10,11 @@ export function getUserData(username) {
             .catch(err => dispatch(getUserDataFailure(err)));
 }
 
-function getUserDataSuccess({ userDetails = {} }) {
+function getUserDataSuccess(user = {}) {
     let response = {
-        success: true,
+        isSuccess: true,
         isLoading: false,
-        userDetails: userDetails ? userDetails : {},
+        user: user ? user : {},
     };
 
     return {
@@ -25,7 +25,7 @@ function getUserDataSuccess({ userDetails = {} }) {
 
 function getUserDataFailure(err) {
     let response = {
-        success: false,
+        isSuccess: false,
         isLoading: false,
         error: err
     };
