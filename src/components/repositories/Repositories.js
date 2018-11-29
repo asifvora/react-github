@@ -29,7 +29,7 @@ class Repositories extends Component {
         return (
             <ul className="list-unstyled">
                 {isLoading && spinnerLoader()}
-                {isSuccess && repositories.length > 0 ? this.renderRepositories(repositories, filter.toLowerCase()) : noRecordFound()}
+                {isSuccess && repositories.length > 0 ? this.renderRepositories(repositories, filter.toLowerCase()) : !isLoading && noRecordFound()}
             </ul>
         );
     }

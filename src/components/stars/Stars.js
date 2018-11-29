@@ -29,7 +29,7 @@ class Stars extends Component {
         return (
             <ul className="list-unstyled">
                 {isLoading && spinnerLoader()}
-                {isSuccess && stars.length > 0 ? this.renderStars(stars, filter.toLowerCase()) : noRecordFound()}
+                {isSuccess && stars.length > 0 ? this.renderStars(stars, filter.toLowerCase()) : !isLoading && noRecordFound()}
             </ul>
         );
     }

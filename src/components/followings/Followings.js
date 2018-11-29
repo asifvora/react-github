@@ -22,7 +22,7 @@ class Followings extends Component {
         return (
             <ul className="list-unstyled">
                 {isLoading && spinnerLoader()}
-                {isSuccess && followings.length > 0 ? this.renderFollowing(following) : noRecordFound()}
+                {isSuccess && followings.length > 0 ? this.renderFollowing(following) : !isLoading && noRecordFound()}
             </ul>
         );
     }
