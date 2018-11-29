@@ -4,24 +4,20 @@ import React from "react";
 
 export function spinnerLoader() {
     return (
-        <div className="loader loader--full">
-            <div className="loader__rects">
-                <div className="loader__rect loader__rect--1"></div>
-                <div className="loader__rect loader__rect--2"></div>
-                <div className="loader__rect loader__rect--3"></div>
-                <div className="loader__rect loader__rect--4"></div>
-                <div className="loader__rect loader__rect--5"></div>
+        <center>
+            <div>
+                <h1>Loading...</h1>
             </div>
-        </div>
+        </center>
     )
 }
 
-export function noRecordFound(msg) {
+export function noRecordFound(msg = 'No data available.') {
     return (
-        <div className="loader loader--full">
-            <div className="loader__rects">
+        <center>
+            <div >
                 <h1>{msg}</h1>
             </div>
-        </div>
+        </center>
     )
 }

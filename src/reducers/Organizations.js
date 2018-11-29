@@ -5,19 +5,19 @@ import * as type from "../constants";
 const initialState = {
     isSuccess: false,
     isLoading: true,
-    user: {},
+    organizations: []
 };
 
-const UserProfile = (state = initialState, action) => {
+const Organizations = (state = initialState, action) => {
     switch (action.type) {
-        case type.GET_USER_DETAILS_SUCCESS:
+        case type.GET_ORGANIZATIONS_SUCCESS:
             return {
                 ...state,
                 isSuccess: action.state.isSuccess,
                 isLoading: action.state.isLoading,
-                user: action.state.user,
+                organizations: action.state.organizations,
             };
-        case type.GET_USER_DETAILS__FAILURE:
+        case type.GET_ORGANIZATIONS_FAILURE:
             return {
                 ...state,
                 isSuccess: action.state.isSuccess,
@@ -28,4 +28,4 @@ const UserProfile = (state = initialState, action) => {
             return state;
     }
 };
-export default UserProfile;
+export default Organizations;

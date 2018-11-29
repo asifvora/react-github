@@ -2,7 +2,6 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUserData } from '../../actions/GitHub'
 
 class Profile extends Component {
 
@@ -10,16 +9,13 @@ class Profile extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        let { dispatch, username } = this.props;
-        dispatch(getUserData(username));
-    }
-
     render() {
-        let { isSuccess, isLoading, user } = this.props.userProfile;
+        let { isSuccess, user } = this.props.user;
+        let { organizations = [] } = this.props.organizations;
+
         return (
             <div>
-                {isSuccess && <div className="user border-bottom">
+                {isSuccess && user && <div className="user border-bottom">
                     <img
                         src={user.avatar_url} width="230" height="230"
                         className="img-rounded img-responsive"
@@ -33,9 +29,9 @@ class Profile extends Component {
                     </div>
                 </div>
                 }
-                {/* <div className="border-top py-3 clearfix border-bottom">
+                {organizations && organizations.length > 0 && <div className="border-top py-3 clearfix border-bottom">
                     <h2 className="mb-1 h4">Organizations</h2>
-                    {orgs.map(org => (
+                    {organizations.map(org => (
                         <img
                             key={org.id}
                             src={org.avatar_url}
@@ -43,8 +39,9 @@ class Profile extends Component {
                             data-tip={org.login} height={35} width={35} className="avatar"
                         />
                     ))}
-                </div> */}
-                {isSuccess && <div className="border-bottom">
+                </div>
+                }
+                {isSuccess && user && <div className="border-bottom">
                     <span>
                         <small>Repositories</small>
                         <h2>{user.public_repos}</h2>

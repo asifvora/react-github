@@ -1,3 +1,3 @@
-import Start from "./Start";
+import Stars from "./Stars";
 
-export { Start };
+export { Stars };

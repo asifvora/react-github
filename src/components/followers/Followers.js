@@ -1,6 +1,9 @@
 'use strict';
 
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import FollowerItem from './FollowerItem';
+import { noRecordFound, spinnerLoader } from '../common/index';
 
 class Followers extends Component {
 
@@ -8,11 +11,23 @@ class Followers extends Component {
         super(props);
     }
 
+    renderFollowers(followers) {
+        return followers
+            .map(follower => <FollowerItem key={follower.id} follower={follower} />);
+    }
+
     render() {
+        let { isLoading, isSuccess, followers = [] } = this.props.followers;
+
         return (
-            <div className="container">
-            </div>
+            <ul className="list-unstyled">
+                {isLoading && spinnerLoader()}
+                {isSuccess && followers.length > 0 ? this.renderFollowers(followers) : noRecordFound()}
+            </ul>
         );
     }
 }
-export default Followers;
+const mapStateToProps = state => {
+    return state;
+};
+export default connect(mapStateToProps)(Followers);

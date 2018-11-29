@@ -1,3 +1,4 @@
 import Repositories from "./Repositories";
+import RepositoryFilter from './RepositoryFilter'
 
-export { Repositories };
+export { Repositories, RepositoryFilter };
