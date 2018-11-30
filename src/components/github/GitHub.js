@@ -51,10 +51,10 @@ class GitHub extends Component {
             <div className="container">
                 <div className="content-wrapper" style={{ padding: '3em 11em 1em 11em' }}>
                     <div className="ui-g">
-                        <div className="ui-g-3">
+                        <div className="ui-g-3 profile-side">
                             <Profile />
                         </div>
-                        <div className="ui-g-9">
+                        <div className="ui-g-9 details-side">
                             <TabView>
                                 <TabPanel header="Repositories">
                                     <RepositoryFilter onUpdate={this.handleRepoFilterUpdate} placeholder="Search repositories…" />

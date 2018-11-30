@@ -3,20 +3,31 @@ body {
     padding: 0;
     font-family: sans-serif;
 }
+
 form.home {
-        width: 20%;
-        color: white;
-        border-radius: 1em;
-        padding: 1em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%) 
+    width: 20%;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
+
 .error {
     padding-top: 3px;
     color: red;
+}
+
+.profile-side {
+    width: 280px !important;
+    position: absolute;
+    z-index: -1;
+}
+.details-side{
+    padding-left: 285px !important;
 }
 
 .user-profile-bio {
@@ -219,4 +230,3 @@ body {
     padding-top: 4px !important;
     padding-bottom: 4px !important;
 }
-
