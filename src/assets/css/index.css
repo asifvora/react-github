@@ -26,7 +26,8 @@ form.home {
     position: absolute;
     z-index: -1;
 }
-.details-side{
+
+.details-side {
     padding-left: 285px !important;
 }
 
@@ -229,4 +230,9 @@ body {
 .py-1 {
     padding-top: 4px !important;
     padding-bottom: 4px !important;
+}
+
+.follow-items {
+    display: inline-block !important;
+    margin: 10px !important;
 }

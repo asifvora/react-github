@@ -3,7 +3,7 @@ import React from 'react';
 export default function FollowingItem({ following }) {
     return (
         <div className="ui-g border-bottom">
-            <div className="ui-g-1">
+            <div className="ui-g-1 follow-items">
                 <li>
                     <span style={{ display: 'inline-block' }}>
                         <img
@@ -15,9 +15,9 @@ export default function FollowingItem({ following }) {
                 </li>
 
             </div>
-            <div className="ui-g-11" style={{ float: 'left', marginTop: '30px' }}>
+            <div className="ui-g-11 follow-items" >
                 <span className="f4 link-gray-dark">{following.name}</span>
-                <span>{following.login}</span>
+                <span><a href={following.html_url} style={{ color: '#0366d6' }} target="_blank" title={following.login}>{following.login}</a></span>
             </div>
         </div>
     );
